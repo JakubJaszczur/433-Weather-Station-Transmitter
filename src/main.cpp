@@ -314,8 +314,8 @@ String ComposeJSONmessage(int id, float temp, float hum, float press, float lux,
     doc["p2"] = pm_25;
     doc["p1"] = pm_10;
   }
-  doc["ba"] = roundf(bat * 100) / 100.0;
-  doc["pa"] = roundf(panel * 100) / 100.0;
+  doc["ba"] = roundf(bat * 1000) / 1000.00;
+  doc["pa"] = roundf(panel * 1000) / 1000.00;
 
   serializeJson(doc,message);
 
