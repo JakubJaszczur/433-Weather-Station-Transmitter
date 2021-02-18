@@ -25,6 +25,9 @@
 #define PANEL_PIN         A1    // Solar Panel voltage measurement
 #define BATTERY_DIVIDER   0.232558      // R2 = 100k, R1 = 330k   R2/(R1 + R2)
 #define PANEL_DIVIDER     0.128205      // R5 = 75k, R4 = 510k   R5/(R4 + R5)
+#define REF_VOLTAGE       1.1
+#define BAT_FACTOR        1.0    // a = y/x, callibration factor, y = real value, e.g 4.2V, x = value calculated, e.g. 4.15V
+#define PAN_FACTOR        1.0    // a = y/x, callibration factor, y = real value, e.g 4.2V, x = value calculated, e.g. 4.15V
 
 // Sensors config data
 #define ALTITUDE        515.0 //define altitude of location
@@ -250,12 +253,22 @@ void GetPollution()
 
 // Read battery voltage
 
-float GetVoltage(int pinNumber, float divider)
+float GetVoltage(int pinNumber, float divider, int iterations, float calibrationFactor)
 {
-  float voltage = (analogRead(pinNumber) + analogRead(pinNumber)) / 2;
-  voltage = (voltage / 1023) * 1.1 / divider;
+  float rawVoltage = 0;
 
-  return voltage;
+  analogRead(pinNumber); //for stable measurements, drop first one
+
+  for(int i = 0; i < iterations; i ++)
+  {
+    rawVoltage = rawVoltage + analogRead(pinNumber);
+  }
+
+  rawVoltage = rawVoltage / iterations;
+
+  float measurement = (((rawVoltage / 1023) * REF_VOLTAGE) / divider) * calibrationFactor;
+
+  return measurement;
 }
 
 // Sending message
@@ -377,9 +390,9 @@ void loop()
   else
     PMS3003initStatus = false;
 
-  float batteryVoltage = GetVoltage(BATTERY_PIN, BATTERY_DIVIDER);
-  delay(50);
-  float panelVoltage = GetVoltage(PANEL_PIN, PANEL_DIVIDER);
+  float batteryVoltage = GetVoltage(BATTERY_PIN, BATTERY_DIVIDER, 5, BAT_FACTOR);
+  //delay(50);
+  float panelVoltage = GetVoltage(PANEL_PIN, PANEL_DIVIDER, 5, PAN_FACTOR);
   
   String messToSend = ComposeJSONmessage(NODE_ID, tempOut, humOut, pressOut, lightOut, UVindex, pm25, pm10, batteryVoltage, panelVoltage);
   SendCommand("AT");
