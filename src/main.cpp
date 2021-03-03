@@ -23,11 +23,11 @@
 #define MEASURE_NUMBER    2     // Number of Smog measurements to average
 #define BATTERY_PIN       A0    // Battery voltage measurement
 #define PANEL_PIN         A1    // Solar Panel voltage measurement
-#define BATTERY_DIVIDER   0.232558      // R2 = 100k, R1 = 330k   R2/(R1 + R2)
-#define PANEL_DIVIDER     0.128205      // R5 = 75k, R4 = 510k   R5/(R4 + R5)
+#define BATTERY_DIVIDER   0.232558      // R2 = 100k, R1 = 330k   R2/(R1 + R2), use real (measured vales)
+#define PANEL_DIVIDER     0.163934      // R5 = 100k, R4 = 510k   R5/(R4 + R5), use real (measured vales)
 #define REF_VOLTAGE       1.1
-#define BAT_FACTOR        1.0    // a = y/x, callibration factor, y = real value, e.g 4.2V, x = value calculated, e.g. 4.15V
-#define PAN_FACTOR        1.0    // a = y/x, callibration factor, y = real value, e.g 4.2V, x = value calculated, e.g. 4.15V
+#define BAT_FACTOR        0.979981    // a = y/x, callibration factor, y = real value, e.g 4.2V, x = value calculated, e.g. 4.15V
+#define PAN_FACTOR        0.986017    // a = y/x, callibration factor, y = real value, e.g 4.2V, x = value calculated, e.g. 4.15V
 
 // Sensors config data
 #define ALTITUDE        515.0 //define altitude of location
