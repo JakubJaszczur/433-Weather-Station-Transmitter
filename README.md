@@ -138,5 +138,5 @@ Measurements send by device using HC-12:
 
 ## 9. Pictures <a name="pictures"></a>
 
-![](Pictures/IMG_20210408_172948.jpg)
+![](Pictures/IMG_20200418_190703.jpg)
 ![](Pictures/IMG_20210408_173003.jpg)
