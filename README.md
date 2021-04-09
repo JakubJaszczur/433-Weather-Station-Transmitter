@@ -34,7 +34,10 @@
 
 ## 1. About <a name = "about"></a>
 
-Weather Station powered by 18650 Li-ion battery, charged by solar panel. 433MHz HC-12 module is used to send data formatted in JSON.
+Weather Station powered by 18650 Li-ion battery, charged by solar panel. 433MHz HC-12 module is used to send data formatted in JSON. The project is a part of bigger IOT system, and is related to my other projects:
+
+- [Epaper Weather Station Receiver](https://github.com/JakubJaszczur/Epaper-Weather-Station-Receiver "Epaper Weather Station Receiver")
+- [Lora & HC12 to MQTT gateway](https://github.com/JakubJaszczur/LORA-433-Gateway "LORA 433 Gateway")
 
 ## 2. Features <a name = "features"></a>
 
@@ -65,7 +68,7 @@ Main components:
 <br>
 ## 4. Libraries <a name = "libraries"></a>
 
-- [ArduinoJson](https://github.com/bblanchon/ArduinoJson "ArduinoJsonD")
+- [ArduinoJson](https://github.com/bblanchon/ArduinoJson "ArduinoJson")
 - [Adafruit MCP9808](https://github.com/adafruit/Adafruit_MCP9808_Library "Adafruit_MCP9808")
 - [Adafruit BME280](https://github.com/adafruit/Adafruit_BME280_Library "Adafruit_BME280")
 - [Adafruit Sensor](https://github.com/adafruit/Adafruit_Sensor "Adafruit_Sensor")
