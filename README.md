@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=400px height=300px src="Pictures/Main.JPG" alt="Device"></a>
+ <img width=400px height=300px src="Pictures/IMG_20210409_170449.jpg" alt="Device"></a>
 </p>
 
 <h1 align="center">Weather Station Transmitter</h1>
@@ -60,7 +60,7 @@ Main components:
 | J5019           | Battery charger with DC-DC converter    | $0.69     |
 | 2000mAh Li-Ion  | 18650 Battery                           | $2.20     |
 | 18650 holder    | 18650 Battery holder                    | $0.35     |
-| PCB             | Custom PCB                              |           |
+| PC,B             | Custom PCB                              |           |
 | Housing         | Custom housing (3D printed)             |           |
 <br>
 ## 4. Libraries <a name = "libraries"></a>
@@ -128,15 +128,18 @@ Measurements send by device using HC-12:
 
 ## 8. Task list <a name="task"></a>
 
-- Software:
-- [] Service commands (receive data, e.g. calibration factors, sleep time and store in EEPROM)
+ Software:
 
-- Hardware:
-- [] Add additional capacitor to Vcc for better stability
-- [] Change MOSFET circuit - Q1 should be connected to GND, add gate-source resistor 
-- [] For future - add anemometer, rainmeter, wid direction etc.
+- [ ] Service commands (receive data, e.g. calibration factors, sleep time and store in EEPROM)
+
+Hardware:
+- [ ] Add additional capacitor to Vcc for better stability
+- [ ] Change MOSFET circuit - Q1 should be connected to GND, add gate-source resistor 
+- [ ] For future - add anemometer, rainmeter, wind direction etc.
 
 ## 9. Pictures <a name="pictures"></a>
 
-![](Pictures/IMG_20200418_190703.jpg)
-![](Pictures/IMG_20210408_173003.jpg)
+![](Pictures/IMG_20210409_170405.jpg)
+![](Pictures/IMG_20210409_170623.jpg)
+![](Pictures/IMG_20210409_170827.jpg)
+![](Pictures/IMG_20210409_171117.jpg)
